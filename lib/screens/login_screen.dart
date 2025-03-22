@@ -17,6 +17,13 @@ class _LoginScreenState extends State<LoginScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Expanded(child: const TextfieldsLogin()),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Text(
+              'Aun no tienes cuenta?',
+              style: TextStyle(decoration: TextDecoration.underline),
+            ),
+          ),
           Align(alignment: Alignment.bottomCenter, child: const SubmitButton()),
         ],
       ),

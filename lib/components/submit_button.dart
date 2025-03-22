@@ -20,7 +20,7 @@ class _SubmitButtonState extends State<SubmitButton> {
               AppColors.backgroundComponent,
             ),
           ),
-          child: Text('Enviar'),
+          child: Text('Enviar', style: TextStyle(color: Colors.black),),
         ),
       ],
     );
