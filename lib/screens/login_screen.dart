@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/components/submit_button.dart';
 import 'package:myapp/components/textfields_login.dart';
+import 'package:myapp/core/app_colors.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -13,10 +13,14 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: AppColors.backgroundComponent,
+        title: Text('ABCondominios'),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Expanded(child: const TextfieldsLogin()),
+          Flexible(child: const TextfieldsLogin()),
           Align(
             alignment: Alignment.bottomCenter,
             child: Text(
@@ -24,7 +28,6 @@ class _LoginScreenState extends State<LoginScreen> {
               style: TextStyle(decoration: TextDecoration.underline),
             ),
           ),
-          Align(alignment: Alignment.bottomCenter, child: const SubmitButton()),
         ],
       ),
     );

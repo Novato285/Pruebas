@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/core/app_colors.dart';
 
-class SubmitButton extends StatefulWidget {
-  const SubmitButton({super.key});
+class SubmitButton extends StatelessWidget {
+  final VoidCallback onSubmit;
 
-  @override
-  State<SubmitButton> createState() => _SubmitButtonState();
-}
+  const SubmitButton({super.key, required this.onSubmit});
 
-class _SubmitButtonState extends State<SubmitButton> {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         ElevatedButton(
-          onPressed: () {},
+          onPressed: onSubmit,
           style: ButtonStyle(
             backgroundColor: WidgetStateProperty.all(
               AppColors.backgroundComponent,
