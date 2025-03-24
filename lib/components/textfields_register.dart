@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:myapp/components/submit_button.dart';
+import 'package:myapp/components/textfields_login.dart';
+import 'package:myapp/screens/homepage.dart';
 
 class TextfieldsRegister extends StatefulWidget {
   const TextfieldsRegister({super.key});
@@ -101,6 +103,7 @@ class TextfieldsRegisterState extends State<TextfieldsRegister> {
           padding: EdgeInsets.all(8),
           child: SubmitButton(
             onSubmit: ValidateFields,
+            nextPage: MiNuevaPantalla(),
           ),
         ),
       ],

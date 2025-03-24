@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/components/textfields_register.dart';
 import 'package:myapp/core/app_colors.dart';
+import 'package:myapp/screens/login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -23,9 +24,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
           Flexible(child: const TextfieldsRegister()),
           Align(
             alignment: Alignment.bottomCenter,
-            child: Text(
-              'Ya tienes cuenta?',
-              style: TextStyle(decoration: TextDecoration.underline),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
+                );
+              },
+              child: Text(
+                'Ya tienes cuenta?',
+                style: TextStyle(decoration: TextDecoration.underline, color: Colors.blue),
+              ),
             ),
           ),
         ],
