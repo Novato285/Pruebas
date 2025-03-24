@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:myapp/components/submit_button.dart';
 import 'package:myapp/screens/homepage.dart';
 
@@ -11,14 +10,14 @@ class TextfieldsLogin extends StatefulWidget {
 }
 
 class TextfieldsLoginState extends State<TextfieldsLogin> {
-  TextEditingController keycontroller = TextEditingController();
+  TextEditingController usercontroller = TextEditingController();
   TextEditingController passcontroller = TextEditingController();
 
   List<bool> errors = [false, false];
 
   void ValidateFields() {
     setState(() {
-      errors[0] = keycontroller.text.isEmpty;
+      errors[0] = usercontroller.text.isEmpty;
       errors[1] = passcontroller.text.isEmpty;
     });
 
@@ -36,12 +35,7 @@ class TextfieldsLoginState extends State<TextfieldsLogin> {
         Padding(
           padding: EdgeInsets.all(8),
           child: TextField(
-            controller: keycontroller,
-            keyboardType: TextInputType.number,
-            inputFormatters: [
-              FilteringTextInputFormatter.digitsOnly,
-              LengthLimitingTextInputFormatter(4),
-            ],
+            controller: usercontroller,
             maxLength: 4,
             decoration: InputDecoration(
               hintText: "Introduce tu correo electronico",
