@@ -38,9 +38,9 @@ class TextfieldsLoginState extends State<TextfieldsLogin> {
             controller: usercontroller,
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
-              hintText: "Introduce tu correo",
+              hintText: "Introduce tu clave de usuario(Numeros)",
               border: OutlineInputBorder(),
-              errorText: errors[0] ? 'Por favor introduzca un correo' : null,
+              errorText: errors[0] ? 'Por favor introduzca una clave' : null,
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   color: errors[0] ? Colors.red : Colors.black,

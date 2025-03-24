@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/components/bottom_app_bar.dart';
 import 'package:myapp/core/app_colors.dart';
+import 'package:myapp/components/bottom_app_bar.dart';
 
-class MiNuevaPantalla extends StatefulWidget {
-  const MiNuevaPantalla({super.key});
+class Members extends StatefulWidget{
+  const Members({super.key});
 
   @override
-  State<MiNuevaPantalla> createState() => _MiNuevaPantallaState();
+  State<Members> createState() => _MembersState();
 }
 
-class _MiNuevaPantallaState extends State<MiNuevaPantalla> {
+class _MembersState extends State<Members> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.backgroundComponent,
-        title: const Text("Home Page"),
+        title: const Text("Members Page"),
         actions: [
           IconButton(
             icon: const Icon(Icons.notifications),

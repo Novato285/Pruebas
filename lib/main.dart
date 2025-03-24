@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/core/app_colors.dart';
 import 'package:myapp/firebase_options.dart';
 import 'package:myapp/screens/login_screen.dart';
+import 'package:myapp/screens/members.dart';
 import 'package:myapp/screens/register_screen.dart';
 
 Future<void> main() async {
@@ -17,7 +18,7 @@ class ABCondominios extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(scaffoldBackgroundColor: AppColors.background),
-      home: const LoginScreen(),
+      home: const Members(),
     );
   }
 }
