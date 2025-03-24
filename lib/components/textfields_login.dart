@@ -44,9 +44,9 @@ class TextfieldsLoginState extends State<TextfieldsLogin> {
             ],
             maxLength: 4,
             decoration: InputDecoration(
-              hintText: "Introduce tu clave de usuario(Numeros)",
+              hintText: "Introduce tu correo electronico",
               border: OutlineInputBorder(),
-              errorText: errors[0] ? 'Por favor introduzca una clave' : null,
+              errorText: errors[0] ? 'Por favor introduzca un correo valido' : null,
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   color: errors[0] ? Colors.red : Colors.black,
