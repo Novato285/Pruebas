@@ -36,7 +36,7 @@ class TextfieldsLoginState extends State<TextfieldsLogin> {
           padding: EdgeInsets.all(8),
           child: TextField(
             controller: usercontroller,
-            keyboardType: TextInputType.number,
+            maxLength: 4,
             decoration: InputDecoration(
               hintText: "Introduce tu clave de usuario(Numeros)",
               border: OutlineInputBorder(),
