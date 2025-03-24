@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:myapp/components/submit_button.dart';
 import 'package:myapp/screens/homepage.dart';
 
@@ -11,14 +10,14 @@ class TextfieldsLogin extends StatefulWidget {
 }
 
 class TextfieldsLoginState extends State<TextfieldsLogin> {
-  TextEditingController keycontroller = TextEditingController();
+  TextEditingController usercontroller = TextEditingController();
   TextEditingController passcontroller = TextEditingController();
 
   List<bool> errors = [false, false];
 
   void ValidateFields() {
     setState(() {
-      errors[0] = keycontroller.text.isEmpty;
+      errors[0] = usercontroller.text.isEmpty;
       errors[1] = passcontroller.text.isEmpty;
     });
 
@@ -36,17 +35,12 @@ class TextfieldsLoginState extends State<TextfieldsLogin> {
         Padding(
           padding: EdgeInsets.all(8),
           child: TextField(
-            controller: keycontroller,
+            controller: usercontroller,
             keyboardType: TextInputType.number,
-            inputFormatters: [
-              FilteringTextInputFormatter.digitsOnly,
-              LengthLimitingTextInputFormatter(4),
-            ],
-            maxLength: 4,
             decoration: InputDecoration(
-              hintText: "Introduce tu clave de usuario(Numeros)",
+              hintText: "Introduce tu correo",
               border: OutlineInputBorder(),
-              errorText: errors[0] ? 'Por favor introduzca una clave' : null,
+              errorText: errors[0] ? 'Por favor introduzca un correo' : null,
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   color: errors[0] ? Colors.red : Colors.black,
@@ -64,9 +58,8 @@ class TextfieldsLoginState extends State<TextfieldsLogin> {
             decoration: InputDecoration(
               hintText: "Introduce tu contrasena",
               border: OutlineInputBorder(),
-              errorText: errors[1]
-                  ? 'Por favor introduzca una contrasena'
-                  : null,
+              errorText:
+                  errors[1] ? 'Por favor introduzca una contrasena' : null,
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   color: errors[1] ? Colors.red : Colors.black,
@@ -80,7 +73,8 @@ class TextfieldsLoginState extends State<TextfieldsLogin> {
           padding: EdgeInsets.all(8),
           child: SubmitButton(
             onSubmit: ValidateFields,
-            nextPage: MiNuevaPantalla(),  // Aquí no hace falta la implementación de ValidateFields en LoginScreen
+            nextPage:
+                MiNuevaPantalla(), // Aquí no hace falta la implementación de ValidateFields en LoginScreen
           ),
         ),
       ],
