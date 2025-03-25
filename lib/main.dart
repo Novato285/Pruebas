@@ -5,8 +5,7 @@ import 'package:myapp/core/app_colors.dart';
 import 'package:myapp/firebase_options.dart';
 import 'package:myapp/user_screens/login_screen.dart';
 
-Future<void> main() async {
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+void main() {
   runApp(const ABCondominios());
 }
 

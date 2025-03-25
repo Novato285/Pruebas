@@ -13,6 +13,8 @@ class LoginAdminScreen extends StatefulWidget {
 class _LoginAdminScreenState extends State<LoginAdminScreen> {
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.backgroundComponent,
@@ -21,37 +23,38 @@ class _LoginAdminScreenState extends State<LoginAdminScreen> {
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          const Text(
-            'Hola, Administrador!',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 20),
-          const TextfieldsLogin(),
-          const Spacer(),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const RegisterAdminScreen(),
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const Text(
+              'Hola, Administrador!',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 20),
+            const TextfieldsLogin(),
+            SizedBox(height: 20),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const RegisterAdminScreen(),
+                    ),
+                  );
+                },
+                child: Text(
+                  'Aun no tienes cuenta?',
+                  style: TextStyle(
+                    decoration: TextDecoration.underline,
+                    color: Colors.blue,
                   ),
-                );
-              },
-              child: Text(
-                'Aun no tienes cuenta?',
-                style: TextStyle(
-                  decoration: TextDecoration.underline,
-                  color: Colors.blue,
                 ),
               ),
             ),
-          ),
-        ],
-      ),
+          ],
+        ),
       ),
     );
   }
