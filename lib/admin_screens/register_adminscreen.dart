@@ -18,26 +18,38 @@ class _RegisterAdminScreenState extends State<RegisterAdminScreen> {
         backgroundColor: AppColors.backgroundComponent,
         title: Text('ABCondominios'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Flexible(child: const TextfieldsRegister()),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginAdminScreen()),
-                );
-              },
-              child: Text(
-                'Ya tienes cuenta?',
-                style: TextStyle(decoration: TextDecoration.underline, color: Colors.blue),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            const Text(
+              'Hola, administrador!',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            Flexible(child: const TextfieldsRegister()),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginAdminScreen(),
+                    ),
+                  );
+                },
+                child: Text(
+                  'Ya tienes cuenta?',
+                  style: TextStyle(
+                    decoration: TextDecoration.underline,
+                    color: Colors.blue,
+                  ),
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
