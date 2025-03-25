@@ -26,13 +26,19 @@ class _LoginAdminScreenState extends State<LoginAdminScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
+            Text(
               'Hola, Administrador!',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: screenWidth * 0.06,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            const SizedBox(height: 20),
-            const TextfieldsLogin(),
-            SizedBox(height: 20),
+            SizedBox(height: screenHeight * 0.02),
+            SizedBox(height: screenHeight * 0.3,
+            child: const TextfieldsLogin()
+            ),
+            SizedBox(height: screenHeight * 0.03),
             Align(
               alignment: Alignment.bottomCenter,
               child: GestureDetector(
@@ -49,6 +55,7 @@ class _LoginAdminScreenState extends State<LoginAdminScreen> {
                   style: TextStyle(
                     decoration: TextDecoration.underline,
                     color: Colors.blue,
+                    fontSize: screenWidth * 0.04,
                   ),
                 ),
               ),

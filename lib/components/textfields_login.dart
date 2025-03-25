@@ -36,11 +36,10 @@ class TextfieldsLoginState extends State<TextfieldsLogin> {
           padding: EdgeInsets.all(8),
           child: TextField(
             controller: usercontroller,
-            maxLength: 4,
             decoration: InputDecoration(
-              hintText: "Introduce tu clave de usuario(Numeros)",
+              hintText: "Introduce tu email",
               border: OutlineInputBorder(),
-              errorText: errors[0] ? 'Por favor introduzca una clave' : null,
+              errorText: errors[0] ? 'Por favor introduzca un email' : null,
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   color: errors[0] ? Colors.red : Colors.black,

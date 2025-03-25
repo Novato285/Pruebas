@@ -13,6 +13,8 @@ class RegisterAdminScreen extends StatefulWidget {
 class _RegisterAdminScreenState extends State<RegisterAdminScreen> {
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.backgroundComponent,
@@ -21,13 +23,18 @@ class _RegisterAdminScreenState extends State<RegisterAdminScreen> {
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
+            Text(
               'Hola, administrador!',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: screenWidth * 0.06, fontWeight: FontWeight.bold),
             ),
-            Flexible(child: const TextfieldsRegister()),
+            SizedBox(height: screenHeight * 0.02),
+            Flexible(
+            child: const TextfieldsRegister()
+            ),
+            SizedBox(height: screenHeight * 0.03),
             Align(
               alignment: Alignment.bottomCenter,
               child: GestureDetector(
@@ -44,6 +51,7 @@ class _RegisterAdminScreenState extends State<RegisterAdminScreen> {
                   style: TextStyle(
                     decoration: TextDecoration.underline,
                     color: Colors.blue,
+                    fontSize: screenWidth * 0.04,
                   ),
                 ),
               ),
