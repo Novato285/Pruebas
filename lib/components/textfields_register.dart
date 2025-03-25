@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:myapp/components/submit_button.dart';
-import 'package:myapp/components/textfields_login.dart';
-import 'package:myapp/screens/homepage.dart';
+import 'package:myapp/user_screens/homepage.dart';
 
 class TextfieldsRegister extends StatefulWidget {
   const TextfieldsRegister({super.key});

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/components/textfields_register.dart';
+import 'package:myapp/components/textfields_login.dart';
 import 'package:myapp/core/app_colors.dart';
-import 'package:myapp/screens/login_screen.dart';
+import 'package:myapp/user_screens/register_screen.dart';
 
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,19 +21,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Flexible(child: const TextfieldsRegister()),
+          Flexible(child: const TextfieldsLogin()),
           Align(
             alignment: Alignment.bottomCenter,
             child: GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const LoginScreen()),
+                  MaterialPageRoute(
+                    builder: (context) => const RegisterScreen(),
+                  ),
                 );
               },
               child: Text(
-                'Ya tienes cuenta?',
-                style: TextStyle(decoration: TextDecoration.underline, color: Colors.blue),
+                'Aun no tienes cuenta?',
+                style: TextStyle(
+                  decoration: TextDecoration.underline,
+                  color: Colors.blue,
+                ),
               ),
             ),
           ),

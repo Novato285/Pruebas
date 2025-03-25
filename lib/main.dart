@@ -1,10 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/admin_screens/login_adminscreen.dart';
 import 'package:myapp/core/app_colors.dart';
 import 'package:myapp/firebase_options.dart';
-import 'package:myapp/screens/login_screen.dart';
-import 'package:myapp/screens/members.dart';
-import 'package:myapp/screens/register_screen.dart';
+import 'package:myapp/user_screens/login_screen.dart';
 
 Future<void> main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
@@ -18,7 +17,7 @@ class ABCondominios extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(scaffoldBackgroundColor: AppColors.background),
-      home: const Members(),
+      home: const LoginScreen(),
     );
   }
 }
