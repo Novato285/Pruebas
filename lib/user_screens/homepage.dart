@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:myapp/components/bottom_app_bar.dart';
 import 'package:myapp/core/app_colors.dart';
 
-class MiNuevaPantalla extends StatefulWidget {
-  const MiNuevaPantalla({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<MiNuevaPantalla> createState() => _MiNuevaPantallaState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _MiNuevaPantallaState extends State<MiNuevaPantalla> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,6 +20,8 @@ class _MiNuevaPantallaState extends State<MiNuevaPantalla> {
           IconButton(
             icon: const Icon(Icons.notifications),
             onPressed: () {
+//              Navigator.push(context, MaterialPageRoute(builder: (context) => const "Notificaciones")))
+
               // Aquí puedes agregar funcionalidad para notificaciones
             },
           ),

@@ -102,7 +102,7 @@ class TextfieldsRegisterState extends State<TextfieldsRegister> {
           padding: EdgeInsets.all(8),
           child: SubmitButton(
             onSubmit: ValidateFields,
-            nextPage: MiNuevaPantalla(),
+            nextPage: HomePage(),
           ),
         ),
       ],

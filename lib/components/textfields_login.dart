@@ -73,7 +73,7 @@ class TextfieldsLoginState extends State<TextfieldsLogin> {
           child: SubmitButton(
             onSubmit: ValidateFields,
             nextPage:
-                MiNuevaPantalla(), // Aquí no hace falta la implementación de ValidateFields en LoginScreen
+                HomePage(), // Aquí no hace falta la implementación de ValidateFields en LoginScreen
           ),
         ),
       ],
