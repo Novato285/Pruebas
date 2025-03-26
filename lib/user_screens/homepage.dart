@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/components/bottom_app_bar.dart';
+import 'package:myapp/components/user_bottom_app_bar.dart';
 import 'package:myapp/core/app_colors.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,6 +16,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: AppColors.backgroundComponent,
         title: const Text("Home Page"),
+        centerTitle: true,
         actions: [
           IconButton(
             icon: const Icon(Icons.notifications),

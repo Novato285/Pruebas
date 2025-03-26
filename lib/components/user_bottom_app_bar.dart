@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/core/app_colors.dart';
+import 'package:myapp/user_screens/homepage.dart';
+import 'package:myapp/user_screens/user_settings.dart';
 
 class CustomAppBar extends StatelessWidget{
   const CustomAppBar({super.key});
@@ -12,18 +14,15 @@ class CustomAppBar extends StatelessWidget{
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           IconButton(
-            icon: Icon(Icons.person),
-            onPressed: () {
-            },
-          ),
-          IconButton(
             icon: Icon(Icons.home),
             onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
             },
           ),
           IconButton(
             icon: Icon(Icons.settings),
             onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const UserSettings()));
             }
                 ),
         ]

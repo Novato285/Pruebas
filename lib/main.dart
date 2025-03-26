@@ -17,7 +17,7 @@ class ABCondominios extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(scaffoldBackgroundColor: AppColors.background),
-      home: const HomePage(),
+      home: const LoginScreen(),
     );
   }
 }
