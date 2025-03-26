@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:myapp/core/app_colors.dart';
 import 'package:myapp/user_screens/notifications.dart';
 
-class CustomAppbar extends StatelessWidget implements PreferredSizeWidget{
+class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final VoidCallback? onNotificationPressed;
   final List<Widget>? actions;
 
-  const CustomAppbar({super.key, required this.title, this.onNotificationPressed, this.actions});
-
+  const CustomAppbar({
+    super.key,
+    required this.title,
+    this.onNotificationPressed,
+    this.actions,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +27,12 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget{
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const NotificationsPage())
+              MaterialPageRoute(
+                builder: (context) => const NotificationsPage(),
+              ),
             );
           },
-        )
+        ),
       ],
     );
   }
