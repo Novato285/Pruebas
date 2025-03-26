@@ -25,7 +25,7 @@ class _MembersState extends State<Members> {
           ),
         ],
       ),
-      bottomNavigationBar: const CustomAppBar(),
+      bottomNavigationBar: const CustomLowAppBar(),
     );
   }
 }

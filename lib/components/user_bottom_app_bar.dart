@@ -3,8 +3,8 @@ import 'package:myapp/core/app_colors.dart';
 import 'package:myapp/user_screens/homepage.dart';
 import 'package:myapp/user_screens/user_settings.dart';
 
-class CustomAppBar extends StatelessWidget{
-  const CustomAppBar({super.key});
+class CustomLowAppBar extends StatelessWidget{
+  const CustomLowAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
