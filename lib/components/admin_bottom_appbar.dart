@@ -4,8 +4,8 @@ import 'package:myapp/admin_screens/homepage_admin.dart';
 import 'package:myapp/admin_screens/admin_settings.dart';
 import 'package:myapp/admin_screens/members.dart';
 
-class CustomLowAppBar extends StatelessWidget {
-  const CustomLowAppBar({super.key});
+class CustomLowAppBarAdmin extends StatelessWidget {
+  const CustomLowAppBarAdmin({super.key});
 
   @override
   Widget build(BuildContext context) {

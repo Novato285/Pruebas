@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/components/loginappbar.dart';
 import 'package:myapp/components/textfields_register.dart';
-import 'package:myapp/core/app_colors.dart';
 import 'package:myapp/user_screens/login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {

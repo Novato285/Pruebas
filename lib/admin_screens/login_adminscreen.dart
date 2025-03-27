@@ -47,7 +47,7 @@ class _LoginAdminScreenState extends State<LoginAdminScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const RegisterAdminScreen(),
+                      builder: (context) => const RegisterScreen(),
                     ),
                   );
                 },

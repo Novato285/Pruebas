@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/admin_screens/homepage_admin.dart';
 import 'package:myapp/core/app_colors.dart';
 import 'package:myapp/firebase_options.dart';
 import 'package:myapp/user_screens/login_screen.dart';
@@ -16,7 +17,7 @@ class ABCondominios extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(scaffoldBackgroundColor: AppColors.background),
-      home: const LoginScreen(),
+      home: const HomePageAdmin(),
     );
   }
 }

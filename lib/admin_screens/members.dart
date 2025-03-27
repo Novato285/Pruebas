@@ -16,14 +16,6 @@ class _MembersState extends State<Members> {
       appBar: AppBar(
         backgroundColor: AppColors.backgroundComponent,
         title: const Text("Members Page"),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.notifications),
-            onPressed: () {
-              // Aquí puedes agregar funcionalidad para notificaciones
-            },
-          ),
-        ],
       ),
       bottomNavigationBar: const CustomLowAppBar(),
     );
