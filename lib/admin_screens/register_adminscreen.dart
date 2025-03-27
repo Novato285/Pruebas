@@ -1,40 +1,72 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/components/loginappbar.dart';
 import 'package:myapp/components/textfields_register.dart';
 import 'package:myapp/core/app_colors.dart';
-import 'package:myapp/admin_screens/login_adminscreen.dart';
+import 'package:myapp/user_screens/login_screen.dart';
 
-class RegisterAdminScreen extends StatefulWidget {
-  const RegisterAdminScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<RegisterAdminScreen> createState() => _RegisterAdminScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _RegisterAdminScreenState extends State<RegisterAdminScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
+  // Controladores para los campos
+  final TextEditingController _keyController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  @override
+  void dispose() {
+    _keyController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.backgroundComponent,
-        title: Text('ABCondominios'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
+      appBar: LoginAppBar(),
+      body: Form(
+        key: _formKey,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text(
-              'Hola, administrador!',
-              style: TextStyle(fontSize: screenWidth * 0.06, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: screenHeight * 0.02),
             Flexible(
-            child: const TextfieldsRegister()
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    // Campos existentes del formulario
+                    const TextfieldsRegister(),
+
+                    // Espacio
+                    const SizedBox(height: 20),
+
+                    // Campo para la clave de 4 dígitos
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: TextFormField(
+                        controller: _keyController,
+                        decoration: const InputDecoration(
+                          labelText: 'Clave de registro (4 dígitos)',
+                          border: OutlineInputBorder(),
+                        ),
+                        keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (value!.isEmpty) return 'Ingresa la clave';
+                          if (value.length != 4 ||
+                              !RegExp(r'^[0-9]+$').hasMatch(value)) {
+                            return 'La clave debe ser 4 dígitos numéricos';
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-            SizedBox(height: screenHeight * 0.03),
+
+            // Botón de "Ya tienes cuenta?"
             Align(
               alignment: Alignment.bottomCenter,
               child: GestureDetector(
@@ -42,22 +74,33 @@ class _RegisterAdminScreenState extends State<RegisterAdminScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const LoginAdminScreen(),
+                      builder: (context) => const LoginScreen(),
                     ),
                   );
                 },
-                child: Text(
+                child: const Text(
                   'Ya tienes cuenta?',
                   style: TextStyle(
                     decoration: TextDecoration.underline,
                     color: Colors.blue,
-                    fontSize: screenWidth * 0.04,
                   ),
                 ),
               ),
             ),
           ],
         ),
+      ),
+
+      // Botón de registro (opcional)
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          if (_formKey.currentState!.validate()) {
+            // Aquí va tu lógica de registro con Firebase
+            // Ej: _registerUser(_keyController.text);
+          }
+        },
+        label: const Text('Registrarse'),
+        icon: const Icon(Icons.person_add),
       ),
     );
   }

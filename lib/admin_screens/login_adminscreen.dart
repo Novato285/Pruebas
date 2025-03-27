@@ -35,8 +35,9 @@ class _LoginAdminScreenState extends State<LoginAdminScreen> {
               ),
             ),
             SizedBox(height: screenHeight * 0.02),
-            SizedBox(height: screenHeight * 0.3,
-            child: const TextfieldsLogin()
+            SizedBox(
+              height: screenHeight * 0.3,
+              child: const TextfieldsLogin(),
             ),
             SizedBox(height: screenHeight * 0.03),
             Align(

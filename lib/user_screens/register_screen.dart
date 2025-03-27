@@ -31,7 +31,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
               },
               child: Text(
                 'Ya tienes cuenta?',
-                style: TextStyle(decoration: TextDecoration.underline, color: Colors.blue),
+                style: TextStyle(
+                  decoration: TextDecoration.underline,
+                  color: Colors.blue,
+                ),
               ),
             ),
           ),
