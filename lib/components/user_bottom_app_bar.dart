@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/core/app_colors.dart';
 import 'package:myapp/user_screens/homepage.dart';
-import 'package:myapp/user_screens/user_settings.dart';
+import 'package:myapp/user_screens/settings.dart';
 
 class CustomLowAppBar extends StatelessWidget{
   const CustomLowAppBar({super.key});
@@ -22,7 +22,7 @@ class CustomLowAppBar extends StatelessWidget{
           IconButton(
             icon: Icon(Icons.settings),
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const UserSettings()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingsPage()));
             }
                 ),
         ]

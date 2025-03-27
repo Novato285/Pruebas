@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/components/loginappbar.dart';
 import 'package:myapp/components/textfields_register.dart';
 import 'package:myapp/core/app_colors.dart';
 import 'package:myapp/user_screens/login_screen.dart';
@@ -14,10 +15,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.backgroundComponent,
-        title: Text('ABCondominios'),
-      ),
+      appBar: LoginAppBar(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [

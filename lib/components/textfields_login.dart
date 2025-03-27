@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/components/submit_button.dart';
-import 'package:myapp/user_screens/homepage.dart';
 
 class TextfieldsLogin extends StatefulWidget {
   const TextfieldsLogin({super.key});
@@ -67,15 +65,7 @@ class TextfieldsLoginState extends State<TextfieldsLogin> {
             ),
           ),
         ),
-        SizedBox(height: 20),
-        Padding(
-          padding: EdgeInsets.all(8),
-          child: SubmitButton(
-            onSubmit: ValidateFields,
-            nextPage:
-                HomePage(), // Aquí no hace falta la implementación de ValidateFields en LoginScreen
-          ),
-        ),
+        const SizedBox(height: 20),
       ],
     );
   }

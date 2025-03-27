@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:myapp/components/submit_button.dart';
+import 'package:myapp/components/user_submit_button.dart';
 import 'package:myapp/user_screens/homepage.dart';
 
 class TextfieldsRegister extends StatefulWidget {
